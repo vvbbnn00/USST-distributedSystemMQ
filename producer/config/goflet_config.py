@@ -1,0 +1,8 @@
+import os
+
+GOFLET_BASE_URL = os.getenv("GOFLET_BASE_URL", "http://localhost:5000")
+GOFLET_JWT_ALGORITHM = os.getenv("GOFLET_JWT_ALGORITHM", "RS256")
+GOFLET_JWT_SECRET = os.getenv("GOFFLET_JWT_SECRET", "")
+GOFLET_JWT_PRIVATE_KEY = os.getenv("GOFLET_JWT_PRIVATE_KEY", "").replace("\\n", "\n")
+GOFLET_JWT_ISSUER = os.getenv("GOFLET_JWT_ISSUER", "")
+GOFLET_JWT_EXPIRATION = int(os.getenv("GOFLET_JWT_EXPIRATION", 3600))
