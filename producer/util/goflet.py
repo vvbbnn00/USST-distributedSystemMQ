@@ -55,7 +55,7 @@ class Goflet:
         payload["nbf"] = payload.get("nbf", int(time.time()) - 1)
         if not self.no_exp:
             payload["exp"] = payload.get("exp", self.jwt_expiration + int(time.time()))
-        payload["kid"] = f"{int(time.time())}-{self._generate_uuid()}"
+        payload["jti"] = f"{int(time.time())}-{self._generate_uuid()}"
         header = self._generate_header()
 
         if self.jwt_algorithm.startswith("HS"):
