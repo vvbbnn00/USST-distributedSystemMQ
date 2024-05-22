@@ -4,6 +4,7 @@ INJECTION_MODULES = [
     "mongodb_attachment",
     "mq_attachment",
     "goflet_attachment",
+    "redis_attachment",
 ]
 
 

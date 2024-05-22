@@ -31,6 +31,12 @@ export const BASIC_MENU = [
         href: '/ai/ocr',
     },
     {
+        key: 'student',
+        label: '学生信息 - Redis',
+        icon: <UsergroupAddOutlined />,
+        href: '/ai/student',
+    },
+    {
         key: 'info',
         label: '登录凭证',
         icon: <IdcardOutlined />,
