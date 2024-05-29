@@ -20,8 +20,14 @@ async def get_student(request, student_id: int):
         return json({"message": "Student not found"}, status=404)
 
     key = f"{STUDENT_PREFIX}:{student_id}"
-    student = await redis.hgetall(key)
-    return json(student)
+    try:
+        student = await redis.hgetall(key)
+        student_dict = {}
+        for k, v in student.items():
+            student_dict[k.decode()] = v.decode()
+        return json(student_dict)
+    except Exception as e:
+        return json({"message": str(e)}, status=500)
 
 
 @bp.route("/create/", methods=["POST"])
